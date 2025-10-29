@@ -1,6 +1,6 @@
 package lotto;
 
-import lotto.domain.Lotto;
+import lotto.domain.lotto.Lotto;
 import lotto.domain.Money;
 import lotto.exception.InvalidLottoMoneyException;
 import lotto.exception.InvalidNumberException;
