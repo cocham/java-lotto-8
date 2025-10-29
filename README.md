@@ -11,6 +11,9 @@
 02. 로또 발행
     - 횟수: 구입 금액 / 1000
     - 1 ~ 45 중 중복 아닌 숫자 6개
+      - 숫자가 6개가 아닐 시 -> `IllegalArgumentException`
+      - 숫자가 중복이 있을 시 -> `IllegalArgumentException`
+      - 숫자가 1 ~ 45 범위에 존재하지 않을 시 -> `IllegalArgumentException`
 
 03. 구매 내역 출력
     - 발행한 로또 수량 및 번호 출력
