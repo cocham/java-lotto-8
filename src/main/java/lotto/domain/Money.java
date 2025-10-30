@@ -4,7 +4,7 @@ import lotto.exception.InvalidLottoMoneyException;
 import lotto.util.ValidationNumber;
 
 public class Money {
-    private int money;
+    private final int money;
     public static int LOTTO_PRICE = 1000;
 
     public Money(String inputMoney) {
@@ -20,4 +20,7 @@ public class Money {
         return money;
     }
 
+    public int calculateLottoCount() {
+        return money / LOTTO_PRICE;
+    }
 }
