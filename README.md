@@ -3,17 +3,12 @@
 01. 로또 구입 금액 입력 받기
     - `구입금액을 입력해 주세요.` 출력
     - 예외 상황 발생 시 ->  "[ERROR]"로 시작하는 에러 메시지를 출력 후 입력 다시 받기
-        - NULL -> `IllegalArgumentException`
-        - 정수 아닐 시 -> `IllegalArgumentException`
-        - 음수일 시 -> `IllegalArgumentException`
+        - 음수일 시 ->  `IllegalArgumentException`
         - 1000으로 나누어 떨어지지 않을 시 -> `IllegalArgumentException`
 
 02. 로또 발행
     - 횟수: 구입 금액 / 1000
     - 1 ~ 45 중 중복 아닌 숫자 6개
-      - 숫자가 6개가 아닐 시 -> `IllegalArgumentException`
-      - 숫자가 중복이 있을 시 -> `IllegalArgumentException`
-      - 숫자가 1 ~ 45 범위에 존재하지 않을 시 -> `IllegalArgumentException`
 
 03. 구매 내역 출력
     - 발행한 로또 수량 및 번호 출력
@@ -36,20 +31,18 @@
     - 쉼표 기준 분리
         - 숫자 앞 뒤 공백 제거
     - 예외 상황 발생 시 ->  "[ERROR]"로 시작하는 에러 메시지를 출력 후 입력 다시 받기
-        - NULL -> `IllegalArgumentException`
-        - 정수 아닐 시 -> `IllegalArgumentException`
-        - 음수일 시 -> `IllegalArgumentException`
+        - 숫자 6개가 아닐 시 -> `IllegalArgumentException`
+        - 중복 숫자가 있을 시 -> `IllegalArgumentException`
         - 1이상 45이하 아닐 시 -> `IllegalArgumentException`
 
 05. 보너스 번호 입력 받기
+    - `보너스 번호를 입력해 주세요.` 출력
     - 예외 상황 발생 시 ->  "[ERROR]"로 시작하는 에러 메시지를 출력 후 입력 다시 받기
-        - NULL -> `IllegalArgumentException`
-        - 정수 아닐 시 -> `IllegalArgumentException`
-        - 음수일 시 -> `IllegalArgumentException`
         - 1이상 45이하 아닐 시 -> `IllegalArgumentException`
+        - 당첨 번호와 중복될 시 -> `IllegalArgumentException`
 
 06. 로또 추첨
-    - 1 ~ 45 중 중복 아닌 숫자 6개 + 보너스 번호 1개
+    - 1 ~ 45 중 중복 아닌 숫자 6개 + 보너스 번호 1개 생성
     - 추첨: 당첨번호와 발행번호 비교
         - 당첨 기준
             - 1등: 6개 번호 일치 / 2,000,000,000원
@@ -75,6 +68,10 @@
       ``` 
       총 수익률은 62.5%입니다.
       ```
+** Input 공통 예외 **
+- NULL -> `IllegalArgumentException`
+- 정수 아닐 시 -> `IllegalArgumentException`
+
 ### 프로그래밍 요구 사항 3
 * 함수(또는 메서드)의 길이가 15라인을 넘어가지 않도록 구현한다.
     * 함수(또는 메서드)가 한 가지 일만 잘 하도록 구현한다.
