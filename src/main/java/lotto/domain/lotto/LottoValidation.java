@@ -19,6 +19,17 @@ public class LottoValidation {
         validateDuplicates(numbers);
     }
 
+    public static void validate(int number, WinningLotto winningLotto) {
+        validateLottoNumber(number);
+        validateBonusNumber(number, winningLotto);
+    }
+
+    private static void validateBonusNumber(int bonusNumber, WinningLotto winningLotto) {
+        if (winningLotto.getWinNumbers().contains(bonusNumber)) {
+            throw new NumberDuplicateException(bonusNumber);
+        }
+    }
+
     private static void validateLottoSize(List<Integer> numbers) {
         if (numbers.size() != BASE_SIZE) {
             throw new InvalidLottoSizeException(BASE_SIZE);
