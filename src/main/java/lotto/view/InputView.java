@@ -6,6 +6,7 @@ import lotto.exception.NullInputException;
 public class InputView {
     private static final String PURCHASE_LOOTTO_MSG = "구입금액을 입력해 주세요.";
     private static final String WINNING_LOTTO_MSG = "당첨 번호를 입력해 주세요.";
+    private static final String BONUS_LOTTO_MSG = "보너스 번호를 입력해 주세요.";
 
     public String printBuyMessage() {
         System.out.println(PURCHASE_LOOTTO_MSG);
@@ -14,6 +15,11 @@ public class InputView {
 
     public String printWinningNumbersMessage() {
         System.out.println(WINNING_LOTTO_MSG);
+        return readValidateInput();
+    }
+
+    public String printBonusNumerMessage() {
+        System.out.println(BONUS_LOTTO_MSG);
         return readValidateInput();
     }
 
