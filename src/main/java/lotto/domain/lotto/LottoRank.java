@@ -21,10 +21,6 @@ public enum LottoRank {
     }
 
     public static LottoRank valueOf(int matchCount, boolean bonusMatch) {
-        if (matchCount == FIRST.matchCount) {
-            return FIRST;
-        }
-
         return Arrays.stream(values())
                 .filter(rank -> rank.matchCount == matchCount)
                 .filter(rank -> rank.bonusMatch == bonusMatch)
