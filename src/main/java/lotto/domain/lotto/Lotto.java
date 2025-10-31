@@ -15,5 +15,9 @@ public class Lotto {
         Collections.sort(sorted);
         return sorted;
     }
+
+    public boolean contains(int number) {
+        return numbers.contains(number);
+    }
 }
 

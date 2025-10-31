@@ -10,4 +10,7 @@ public class LottoBonusNumber {
         this.bonusNumber = bonusNumber;
     }
 
+    public int getBonusNumber() {
+        return bonusNumber;
+    }
 }
