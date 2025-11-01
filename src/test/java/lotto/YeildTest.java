@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class YeildTest {
+public class YieldTest {
     private WinningLotto winningLotto;
     private LottoBonusNumber bonusNumber;
 
@@ -37,9 +37,9 @@ public class YeildTest {
         LottoResult lottoResult = new LottoResult(lottos, winningLotto, bonusNumber);
         long prize = lottoResult.getTotalPrize();
 
-        Yeild yeild = new Yeild(prize, money);
+        Yield yield = new Yield(prize, money);
 
-        assertThat(yeild.getYeild()).isEqualTo(22_589_611.11);
+        assertThat(yield.getValue()).isEqualTo(22_589_611.11);
     }
 
 }
