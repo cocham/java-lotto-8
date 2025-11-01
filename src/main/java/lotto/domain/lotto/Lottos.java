@@ -11,6 +11,10 @@ public class Lottos {
         this.lottos = Collections.unmodifiableList(lottos);
     }
 
+    public List<Lotto> getLottos() {
+        return lottos;
+    }
+
     public List<List<Integer>> getSortedLottos() {
         return lottos.stream()
                 .map(Lotto::getSortedNumbers)
