@@ -7,7 +7,7 @@ public class Lotto {
 
     public Lotto(List<Integer> numbers) {
         LottoValidation.validate(numbers);
-        this.numbers = new ArrayList<>(numbers);
+        this.numbers = Collections.unmodifiableList(new ArrayList<>(numbers));
     }
 
     public List<Integer> getSortedNumbers() {

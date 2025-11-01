@@ -8,7 +8,7 @@ public class Lottos {
     private final List<Lotto> lottos;
 
     public Lottos(List<Lotto> lottos) {
-        this.lottos = Collections.unmodifiableList(lottos);
+        this.lottos = Collections.unmodifiableList(new ArrayList<>(lottos));
     }
 
     public List<Lotto> getLottos() {
