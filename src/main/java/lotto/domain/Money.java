@@ -3,12 +3,14 @@ package lotto.domain;
 import lotto.exception.InvalidLottoMoneyException;
 import lotto.util.ValidationNumber;
 
+import static lotto.util.InputParser.parseNumber;
+
 public class Money {
     private final int money;
     public static int LOTTO_PRICE = 1000;
 
     public Money(String inputMoney) {
-        int parseMoney = ValidationNumber.parseNumber(inputMoney);
+        int parseMoney = parseNumber(inputMoney);
         this.money = validateLottoMoney(parseMoney);
     }
 
@@ -22,5 +24,9 @@ public class Money {
 
     public int calculateLottoCount() {
         return money / LOTTO_PRICE;
+    }
+
+    public int getAmount() {
+        return money;
     }
 }
