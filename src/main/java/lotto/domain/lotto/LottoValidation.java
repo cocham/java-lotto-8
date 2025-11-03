@@ -19,15 +19,9 @@ public class LottoValidation {
         validateDuplicates(numbers);
     }
 
-    public static void validate(int number, WinningLotto winningLotto) {
-        validateLottoNumber(number);
-        validateBonusNumber(number, winningLotto);
-    }
-
-    private static void validateBonusNumber(int bonusNumber, WinningLotto winningLotto) {
-        if (winningLotto.getWinNumbers().contains(bonusNumber)) {
-            throw new NumberDuplicateException(bonusNumber);
-        }
+    public static void validateBonusNumber(int bonusNumber, WinningLotto winningLotto) {
+        validateLottoNumber(bonusNumber);
+        validateDuplicates(bonusNumber, winningLotto);
     }
 
     private static void validateLottoSize(List<Integer> numbers) {
@@ -45,6 +39,12 @@ public class LottoValidation {
         }
     }
 
+    private static void validateDuplicates(int bonusNumber, WinningLotto winningLotto) {
+        if (winningLotto.getWinNumbers().contains(bonusNumber)) {
+            throw new NumberDuplicateException(bonusNumber);
+    }
+
+    }
     private static void validateLottoNumber(List<Integer> numbers) {
         for (int number : numbers) {
             if (number < MIN_LOTTO_NUMBER || number > MAX_LOTTO_NUMBER) {
@@ -52,4 +52,12 @@ public class LottoValidation {
             }
         }
     }
+
+    private static void validateLottoNumber(int number) {
+        if (number < MIN_LOTTO_NUMBER || number > MAX_LOTTO_NUMBER) {
+            throw new InvalidLottoNumberException(MIN_LOTTO_NUMBER, MAX_LOTTO_NUMBER, number);
+        }
+    }
+
+
 }
