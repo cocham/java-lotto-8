@@ -65,7 +65,7 @@ public class LottoController {
 
     private LottoBonusNumber readBonusNumber(WinningLotto winningLotto) {
         return retryOnException(() -> {
-            String inputBonusNumber = inputView.readBonusNumer();
+            String inputBonusNumber = inputView.readBonusNumber();
             int bonusNumber = InputParser.parseNumber(inputBonusNumber);
 
             return new LottoBonusNumber(bonusNumber, winningLotto);

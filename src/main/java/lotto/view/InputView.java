@@ -19,7 +19,7 @@ public class InputView {
         return readValidateInput();
     }
 
-    public String readBonusNumer() {
+    public String readBonusNumber() {
         System.out.println();
         System.out.println(BONUS_LOTTO_MSG);
         return readValidateInput();
