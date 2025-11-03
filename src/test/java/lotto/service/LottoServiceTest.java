@@ -210,7 +210,7 @@ class LottoServiceTest {
         @DisplayName("수익률이 100% 미만일 때 올바르게 계산된다")
         void 수익률_100퍼센트_미만() {
             NumberGenerator generator = new FixedNumberGenerator(List.of(
-                    List.of(1, 2, 3, 8, 9, 10),   // 5등: 5,000원
+                    List.of(11, 12, 13, 8, 9, 10),   // 꽝
                     List.of(11, 12, 13, 14, 15, 16), // 꽝
                     List.of(17, 18, 19, 20, 21, 22), // 꽝
                     List.of(23, 24, 25, 26, 27, 28), // 꽝
@@ -226,8 +226,7 @@ class LottoServiceTest {
                     lottos, winningLotto, bonusNumber, money
             );
 
-            // 5,000 / 5,000 * 100 = 100%
-            assertThat(result.getYield()).isEqualTo(100.0);
+            assertThat(result.getYield()).isEqualTo(0.0);
         }
 
         @Test
