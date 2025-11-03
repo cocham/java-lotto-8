@@ -17,17 +17,14 @@ public class LottoController {
     private final InputView inputView;
     private final OutputView outputView;
     private final LottoService lottoService;
-    private final InputParser inputParser;
 
     public LottoController(InputView inputView,
                            OutputView outputView,
-                           LottoService lottoService,
-                           InputParser inputParser
+                           LottoService lottoService
     ) {
         this.inputView = inputView;
         this.outputView = outputView;
         this.lottoService = lottoService;
-        this.inputParser = inputParser;
     }
 
     public void run() {
@@ -60,7 +57,7 @@ public class LottoController {
         return retryOnException(() -> {
             String inputWinningLotto = inputView.readWinningNumbers();
             List<String> tokens = InputParser.tokenizeNumbers(inputWinningLotto);
-            List<Integer> winningNumbers = inputParser.parseNumbers(tokens);
+            List<Integer> winningNumbers = InputParser.parseNumbers(tokens);
 
             return new WinningLotto(winningNumbers);
         });
