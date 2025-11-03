@@ -26,7 +26,6 @@ public class OutputView {
     }
 
     public void printWinningResult(LottoResultDTO lottoResultDto) {
-        System.out.println();
         System.out.println(STAT_HEADER);
 
         for (RankStatDTO stat : lottoResultDto.getRankStats()) {
@@ -43,6 +42,10 @@ public class OutputView {
         }
 
         System.out.printf(YIELD_FORMAT + "\n", lottoResultDto.getYield());
+    }
+
+    public void printError(String message) {
+        System.out.println(message);
     }
 
     private String createMessage(LottoRank rank) {
