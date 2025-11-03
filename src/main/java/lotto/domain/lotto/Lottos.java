@@ -17,9 +17,11 @@ public class Lottos {
     }
 
     public List<List<Integer>> getSortedLottos() {
-        return lottos.stream()
+        List<List<Integer>> sortedLottos = lottos.stream()
                 .map(Lotto::getSortedNumbers)
                 .collect(Collectors.toList());
+
+        return Collections.unmodifiableList(sortedLottos);
     }
 
     public int getCount() {

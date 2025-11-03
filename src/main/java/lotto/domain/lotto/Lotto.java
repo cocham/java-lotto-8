@@ -15,7 +15,7 @@ public class Lotto {
     public List<Integer> getSortedNumbers() {
         List<Integer> sorted = new ArrayList<>(numbers);
         Collections.sort(sorted);
-        return sorted;
+        return Collections.unmodifiableList(sorted);
     }
 
     public boolean contains(int number) {
