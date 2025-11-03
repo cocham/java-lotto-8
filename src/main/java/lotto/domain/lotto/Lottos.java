@@ -3,6 +3,7 @@ package lotto.domain.lotto;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Lottos {
     private final List<Lotto> lottos;
@@ -18,11 +19,10 @@ public class Lottos {
     public List<List<Integer>> getSortedLottos() {
         return lottos.stream()
                 .map(Lotto::getSortedNumbers)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     public int getCount() {
         return lottos.size();
     }
-
 }
