@@ -1,4 +1,4 @@
-package lotto;
+package lotto.domain;
 
 import lotto.domain.lotto.Lotto;
 import lotto.domain.lotto.Lottos;
@@ -53,7 +53,4 @@ public class LottosTest {
         assertThat(result.get(1)).containsExactly(9, 15, 21, 28, 37, 43);
         assertThat(result.get(2)).containsExactly(40, 41, 42, 43, 44, 45);
     }
-
-
-
 }

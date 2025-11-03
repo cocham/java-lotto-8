@@ -1,10 +1,7 @@
-package lotto;
+package lotto.util;
 
 import lotto.domain.Money;
 import lotto.domain.lotto.Lottos;
-import lotto.util.FixedNumberGenerator;
-import lotto.util.LottoGenerator;
-import lotto.util.NumberGenerator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
