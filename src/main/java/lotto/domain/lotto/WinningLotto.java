@@ -1,16 +1,17 @@
 package lotto.domain.lotto;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static lotto.domain.lotto.LottoValidation.validate;
 
 public class WinningLotto {
-    private List<Integer> winNumbers;
+    private final List<Integer> winNumbers;
 
     public WinningLotto(List<Integer> winNumbers) {
         validate(winNumbers);
-        this.winNumbers = new ArrayList<>(winNumbers);
+        this.winNumbers = Collections.unmodifiableList(new ArrayList<>(winNumbers));
     }
 
     public List<Integer> getWinNumbers() {
