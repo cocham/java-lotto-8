@@ -2,14 +2,13 @@ package lotto.domain;
 
 import lotto.exception.InvalidLottoMoneyException;
 import lotto.exception.OutOfRangeMoneyException;
-import lotto.util.ValidationNumber;
 
 import static lotto.util.InputParser.parseNumber;
 
 public class Money {
     private final int money;
-    public static int MIN_LOTTO_PRICE = 1000;
-    public static int MAX_LOTTO_PRICE = 100000;
+    public static final int MIN_LOTTO_PRICE = 1000;
+    public static final int MAX_LOTTO_PRICE = 100000;
 
     public Money(String inputMoney) {
         int parseMoney = parseNumber(inputMoney);
@@ -17,7 +16,6 @@ public class Money {
     }
 
     private int validateLottoMoney(int money) {
-        ValidationNumber.validatePositiveNumber(money);
         if (money < MIN_LOTTO_PRICE || money > MAX_LOTTO_PRICE) {
             throw new OutOfRangeMoneyException(MIN_LOTTO_PRICE, MAX_LOTTO_PRICE);
         }
