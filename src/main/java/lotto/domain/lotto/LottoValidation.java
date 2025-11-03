@@ -15,13 +15,15 @@ public class LottoValidation {
 
     public static void validate(List<Integer> numbers) {
         validateLottoSize(numbers);
-        validateLottoNumber(numbers);
+        for (int number : numbers) {
+            validateNumberRange(number);
+        }
         validateDuplicates(numbers);
     }
 
     public static void validateBonusNumber(int bonusNumber, WinningLotto winningLotto) {
-        validateLottoNumber(bonusNumber);
-        validateDuplicates(bonusNumber, winningLotto);
+        validateNumberRange(bonusNumber);
+        validateBonusNotInWinning(bonusNumber, winningLotto);
     }
 
     private static void validateLottoSize(List<Integer> numbers) {
@@ -31,33 +33,23 @@ public class LottoValidation {
     }
 
     private static void validateDuplicates(List<Integer> numbers) {
-        Set<Integer> checkNumbers = new HashSet<>(BASE_SIZE);
+        Set<Integer> seen = new HashSet<>(BASE_SIZE);
         for (Integer number : numbers) {
-            if(!checkNumbers.add(number)) {
+            if(!seen.add(number)) {
                 throw new NumberDuplicateException(number);
             };
         }
     }
 
-    private static void validateDuplicates(int bonusNumber, WinningLotto winningLotto) {
+    private static void validateBonusNotInWinning(int bonusNumber, WinningLotto winningLotto) {
         if (winningLotto.getWinNumbers().contains(bonusNumber)) {
             throw new NumberDuplicateException(bonusNumber);
-    }
-
-    }
-    private static void validateLottoNumber(List<Integer> numbers) {
-        for (int number : numbers) {
-            if (number < MIN_LOTTO_NUMBER || number > MAX_LOTTO_NUMBER) {
-                throw new InvalidLottoNumberException(MIN_LOTTO_NUMBER, MAX_LOTTO_NUMBER, number);
-            }
         }
     }
 
-    private static void validateLottoNumber(int number) {
+    private static void validateNumberRange(int number) {
         if (number < MIN_LOTTO_NUMBER || number > MAX_LOTTO_NUMBER) {
             throw new InvalidLottoNumberException(MIN_LOTTO_NUMBER, MAX_LOTTO_NUMBER, number);
         }
     }
-
-
 }
