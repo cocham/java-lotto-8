@@ -13,7 +13,7 @@ public class LottoResult {
             LottoRank resultRank = winningLotto.match(lotto, bonusNumber);
             this.rankCounts.put(
                     resultRank,
-                    this.rankCounts.getOrDefault(resultRank, 0) + 1
+                    this.rankCounts.get(resultRank) + 1
             );
         }
     }
