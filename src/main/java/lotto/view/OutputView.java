@@ -13,7 +13,11 @@ public class OutputView {
     private static final String RESULT_FORMAT = "%s - %d개";
     private static final String YIELD_FORMAT = "총 수익률은 %.1f%%입니다.";
 
+    public void printPurchasedHistory(LottosDTO lottosDto) {
+        int lottoCount = lottosDto.getLottoCount();
+        List<List<Integer>> sortedLottoNumbers = lottosDto.getSortedNumbers();
 
+        System.out.println();
         System.out.println(lottoCount + BUY_MESSAGE);
 
         for (List<Integer> numbers : sortedLottoNumbers) {
