@@ -1,6 +1,5 @@
-package lotto;
+package lotto.util;
 
-import lotto.util.InputParser;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -18,6 +17,16 @@ public class InputParserTest {
         List<String> result = parser.tokenizeNumbers(input);
 
         assertThat(result).containsExactly("1", "2", "3", "40", "45");
+        assertThat(result).hasSize(5);
+    }
+
+    @DisplayName("String 리스트를 Integer 리스트로 반환한다.")
+    @Test
+    void parseNumbers() {
+        List<String> input = List.of("1", "2", "3", "40", "45");
+        List<Integer> result = parser.parseNumbers(input);
+
+        assertThat(result).containsExactly(1, 2, 3, 40, 45);
         assertThat(result).hasSize(5);
     }
 }
