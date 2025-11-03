@@ -10,13 +10,12 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.List;
-import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class LottoValidationTest {
     @DisplayName("로또 번호의 개수가 6개가 아니면 InvalidLottoSizeException 예외가 발생한다.")
     @ParameterizedTest
-    @ValueSource(ints = {5, 7}) //validateLottosize에 매개변수로 들어감
+    @ValueSource(ints = {5, 7})
     void validateLottoSize(int size) {
         List<Integer> numbers;
         if (size == 7) {

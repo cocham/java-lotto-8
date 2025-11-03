@@ -2,6 +2,7 @@ package lotto;
 
 import lotto.domain.Money;
 import lotto.domain.lotto.Lottos;
+import lotto.util.FixedNumberGenerator;
 import lotto.util.LottoGenerator;
 import lotto.util.NumberGenerator;
 import org.junit.jupiter.api.DisplayName;
@@ -11,7 +12,6 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @DisplayName("LottoGenerator 클래스")
 public class LottoGeneratorTest {
