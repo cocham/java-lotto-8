@@ -8,17 +8,19 @@ public class InputView {
     private static final String WINNING_LOTTO_MSG = "당첨 번호를 입력해 주세요.";
     private static final String BONUS_LOTTO_MSG = "보너스 번호를 입력해 주세요.";
 
-    public String printBuyMessage() {
+    public String readPurchaseAmount() {
         System.out.println(PURCHASE_LOOTTO_MSG);
         return readValidateInput();
     }
 
-    public String printWinningNumbersMessage() {
+    public String readWinningNumbers() {
+        System.out.println();
         System.out.println(WINNING_LOTTO_MSG);
         return readValidateInput();
     }
 
-    public String printBonusNumerMessage() {
+    public String readBonusNumer() {
+        System.out.println();
         System.out.println(BONUS_LOTTO_MSG);
         return readValidateInput();
     }
@@ -30,7 +32,4 @@ public class InputView {
         };
         return input;
     }
-
-
-
 }
